@@ -1,0 +1,5 @@
+%h1.title= @post.title
+
+%p.date= "Created #{time_ago_in_words(@post.created_at)} ago"
+%p.body= @post.body
+
