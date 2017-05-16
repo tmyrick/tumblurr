@@ -14,7 +14,12 @@
  *= require_self
  */
 
+$red: #cd5161;
+$blue: #529fcd;
+$green: #88d0ad;
+
 @import 'normalize';
+
 
 html, body {
 	font-family: 'PT Sans Narrow', sans-serif;
@@ -35,7 +40,7 @@ a {
 	left: 0;
 	top: 0;
 	height: 100%;
-	background: #88D0AD;
+	background: $green;
 	padding: 7em 0 0 0;
 	border-right: 1px solid #b8e2fe;
 
@@ -104,7 +109,7 @@ a {
 	#header {
 		padding: 1.2em 3.5em;
 		border-bottom: 1px solid #b8e2fe;
-		background: #529FCD;
+		background: $blue;
 		color: #FFF;
 		p {
 			display: inline;
@@ -130,7 +135,7 @@ a {
 			a {
 				font-weight: 500;
 				text-decoration: none;
-				color: #529FCD;
+				color: $blue;
 				font-size: 1.2em;
 				&:hover {
 					color: #22487b;
@@ -151,7 +156,7 @@ a {
 		.title {
 			font-weight: 500;
 			text-decoration: none;
-			color: #529FCD;
+			color: $blue;
 			font-size: 2.5em;
 			margin-bottom: 0;
 		}
@@ -262,4 +267,28 @@ a {
 			color: #33acb7;
 		}
 	}
+	#errors {
+		li {
+			color: $red;
+		}
+	}
+	.utilities {
+		span::after {
+		  content: ' |';
+		  color: #444;
+		}
+		span:last-child::after {
+		  content: '';
+		}
+	}
+}
+
+.red {
+	color: $red;
+}
+.blue {
+	color: $blue;
+}
+.green {
+	color: $green;
 }
