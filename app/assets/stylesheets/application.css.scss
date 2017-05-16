@@ -43,6 +43,7 @@ a {
 		list-style: none;
 		text-align: right;
 		padding-right: 3em;
+		padding-left: 1.3em;
 		.category {
 			font-weight: 900;
 			font-size: 2.5em;
@@ -67,7 +68,7 @@ a {
 		}
 	}
 	.sign_in {
-		position: absolute;
+		// position: absolute;
 		right: 3.1em;
 		top: 39%;
 		font-size: 1.0em;

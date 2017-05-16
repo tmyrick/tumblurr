@@ -1,8 +1,26 @@
-%h1 Home page
+#page_wrapper
+  %h1 Greetings, traveller!
+  %p A long time ago, in a galaxy far, far away...
+  %p It is a period of civil war. Rebel
+  %p spaceships, striking from a hidden
+  %p base, have won their first victory
+  %p against the evil Galactic Empire.
+  %p During the battle, Rebel spies managed
+  %p to steal secret plans to the Empire's
+  %p ultimate weapon, the Death Star, an
+  %p armored space station with enough
+  %p power to destroy an entire planet.
+  %p Pursued by the Empire's sinister agents,
+  %p Princess Leia races home aboard her
+  %p starship, custodian of the stolen plans
+  %p that can save her people and restore
+  %p freedom to the galaxy....
 
-- @posts.each do |post|
-  .post_wrapper
-    %h2.title= link_to post.title, post
-    %p.content= truncate(post.body, legnth:70)
-    %p.date= "#{time_ago_in_words(post.created_at)}"
-    %hr
+  %h4 Recent posts
+
+  - @posts.each do |post|
+    .post_wrapper
+      %h2.title= link_to post.title, post
+      %p.content= truncate(post.body, legnth:70)
+      %p.date= "#{time_ago_in_words(post.created_at)}"
+      %hr
