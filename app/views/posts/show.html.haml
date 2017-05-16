@@ -8,3 +8,9 @@
     %span.red= link_to ' Delete', post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete #{@post.title}?" }
   %p.body= @post.body
 
+  #comments
+    %h2= "#{@post.comments.count} Comments"
+    = render @post.comments
+    %h3 Join Discussion
+    = render "comments/form"
+
