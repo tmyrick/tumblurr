@@ -18,23 +18,32 @@
         <li class="category"><%= link_to "Tumblurr", root_path %></li>
         <li><%= link_to "Posts", root_path %></li>
         <li><%= link_to "About", about_path %></li>
-        <li class="sign_in">User Login</li>
+        <% unless user_signed_in? %>
+          <li class="sign_in"><%= link_to "User Login", new_user_session_path %></li>
+        <% end -%>
       </ul>
 
     </div>
 
     <div id="main_content">
       <div id="header">
-        <% if current_page?(root_path) %>
-          <p>Post Feed</p>
-        <% elsif current_page?(about_path) %>
-          <p>My Site</p>
-        <% else %>
-          <%= link_to "Back to Post Feed", root_path %>
-        <% end %>
+        <div id="current_page">
+          <% if current_page?(root_path) %>
+            <p>Post Feed</p>
+          <% elsif current_page?(about_path) %>
+            <p>My Site</p>
+          <% else %>
+            <%= link_to "Back to Post Feed", root_path %>
+          <% end %>
+        </div>
         <div class="buttons">
-          <button class="button"><%= link_to "Make Post", new_post_path %></button>
-          <button class="button">Log Out</button>
+          <% if user_signed_in? %>
+            <button class="button light-green"><%= link_to "Make Post", new_post_path %></button>
+            <button class="button dark-green"><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></button>
+          <% else %>
+            <button class="button light-green"><%= link_to "Sign Up", new_user_registration_path %>
+            <button class="button dark-green"><%= link_to "User Login", new_user_session_path %>
+          <% end -%>
         </div>
       </div>
 
